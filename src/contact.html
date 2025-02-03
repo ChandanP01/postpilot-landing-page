@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <!-- icon -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>PostPilot</title>
+</head>
+
+<style>
+    .font-span {
+        font-family: "Covered By Your Grace", serif;
+    }
+
+    .font-inter {
+        font-family: "Inter", serif;
+    }
+
+    .underline-animation {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    .underline-animation::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        left: 0;
+        bottom: -2px;
+        background-color: #009387;
+        transition: width 0.6s ease-in-out;
+    }
+
+    .underline-animation:hover::after {
+        width: 100%;
+    }
+</style>
+
+<body class="m-0 p-0 box-border font-inter">
+    <div class="container flex flex-col mx-auto font-inter scroll-smooth">
+        <!-- Navbar -->
+        <nav class="p-5 sticky left-0 top-0 bg-[#fff] font-medium">
+            <div class="container mx-auto flex justify-between gap-10 items-center">
+                <!-- Logo -->
+                <div>
+                    <img src="../images/nav logo.png" alt="">
+                </div>
+
+                <!-- Menu -->
+                <div class="md:mr-12 hidden md:flex space-x-10  items-center text-[#222222]">
+                    <div class="flex space-x-4 lg:text-[0.9rem] text-[0.7rem]">
+                        <select name="" id="" class="cursor-pointer hover:text-blue-500">
+                            <option value="">
+                                <a href="#" class="hover:text-blue-500">Resources</a>
+                            </option>
+                        </select>
+                        <a href="#" class=" hover:text-blue-500">Success stories</a>
+                        <select name="" id="" class="cursor-pointer hover:text-blue-500">
+                            <option value="">
+                                <a href="#" class=" hover:text-blue-500">Company</a>
+                            </option>
+                        </select>
+                        <a href="#" class=" hover:text-blue-500">Pricing</a>
+                    </div>
+                    <div class="flex space-x-4 text-[#2E2F35] md:text-[0.8rem] lg:text-[1rem]">
+                        <button
+                            class="lg:px-4 md:px-2 lg:py-2 text-[#2E2F35] border-1 border-black border-b-4 border-r-4 rounded-xl ">Login</button>
+                        <button
+                            class="lg:px-4 md:px-2 lg:py-2 bg-[#FF6D2C] text-[#ffff] border-1 border-black border-b-4 border-r-4 rounded-xl">Create
+                            free account</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-4 mt-4">
+                <select name="" id="" class="cursor-pointer hover:text-blue-500">
+                    <option value="">
+                        <a href="#" class="hover:text-blue-500">Resources</a>
+                    </option>
+                </select>
+                <a href="#" class=" hover:text-blue-500">Success stories</a>
+                <select name="" id="" class="cursor-pointer hover:text-blue-500">
+                    <option value="">
+                        <a href="#" class=" hover:text-blue-500">Company</a>
+                    </option>
+                </select>
+                <a href="#" class=" hover:text-blue-500">Pricing</a>
+
+                <button
+                    class="p-2 text-[#2E2F35] border-1 border-black border-b-4 border-r-4 rounded-xl ">Login</button>
+                <button
+                    class="p-2 bg-[#FF6D2C] text-[#ffff] border-1 border-black border-b-4 border-r-4 rounded-xl">Create
+                    free account</button>
+            </div>
+        </nav>
+
+        <!-- first section -->
+        <section class="mt-14 md:mt-18 py-24">
+            <div class="max-w-7xl mx-auto px-7 sm:px-15">
+                <div class="flex items-center mb-28 space-x-9">
+                    <span class="h-[3px] md:w-[100px] w-[70px] bg-black"></span>
+                    <h2 class="md:text-[2.5rem] text-[1.9rem] font-semibold mr-5 sm:mr-0">
+                        Contact us
+                    </h2>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between gap-16 md:gap-8">
+                    <div class="flex space-x-8">
+                        <img src="../images/contact_1.png" alt="" class="md:w-[70px] md:h-[70px] w-[60px] h-[60px]" />
+                        <div>
+                            <h3 class="md:text-[1.8rem] text-[1.5rem] font-semibold mb-2 ">
+                                Address
+                            </h3>
+                            <p class="text-[#545454] md:text-[1.3rem] text-[1rem] font-medium ">
+                                Jaipur Rajasthan INDIA
+                            </p>
+                            <p class="text-[#545454] md:text-[1.3rem] text-[1rem] font-medium ">
+                                Pin 342087
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-8">
+                        <img src="../images/contact_2.png" alt="" class="md:w-[70px] md:h-[70px] w-[60px] h-[60px]" />
+                        <div>
+                            <h3 class="md:text-[1.8rem] text-[1.5rem] font-semibold mb-2">
+                                Call us
+                            </h3>
+                            <p class="text-[#545454] md:text-[1.3rem] text-[1rem] font-medium">
+                                +91 98765 43210
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-8">
+                        <img src="../images/contact_3.png" alt="" class="md:w-[70px] md:h-[70px] w-[60px] h-[60px]" />
+                        <div>
+                            <h3 class="md:text-[1.8rem] text-[1.5rem] font-semibold mb-2">
+                                Email us
+                            </h3>
+                            <p class="text-[#545454] md:text-[1.3rem] text-[1rem] font-medium">
+                                info@test.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- second section -->
+        <div class="conatainer size-full bg-[#F3FAFA]">
+            <section id="contact-form" class="max-w-5xl py-26 px-4 mx-auto bg-[F3FAFA] w-[100%]">
+                <div class="text-center mb-12">
+                    <h2 class="text-[40px]/[52.08px] text-[#2E2F35] font-semibold tracking-[2px]">
+                        Get in touch with us.
+                    </h2>
+                    <p class="text-[40px]/[52.08px] text-[#2E2F35] font-semibold tracking-[2px] mb-2">
+                        We're here to assist you.
+                    </p>
+                </div>
+
+                <form class="bg-[#FDF3EA] px-4 sm:px-24 py-20 rounded-[30px] shadow-sm">
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-14">
+                        <div class="name-div relative mb-4">
+                            <input type="text" id="name" name="name" required
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
+                                placeholder="Full name" />
+                        </div>
+                        <div class="email-div relative mb-4">
+                            <input type="email" id="email" name="email" required
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
+                                placeholder="Email address" />
+                        </div>
+                        <div class="phone-div relative mb-4">
+                            <input type="tel" id="tel" name="tel" required
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
+                                placeholder="Phone number" />
+                        </div>
+                        <div class="date-div relative mb-4">
+                            <input type="date" id="date" name="date" required
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
+                                placeholder="Date of birth" />
+                        </div>
+                        <div class="city-div relative mb-4">
+                            <input type="text" id="gender" name="gender" required
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
+                                placeholder="Gender" />
+                        </div>
+                        <div class="city-div relative mb-4">
+                            <input type="text" id="city" name="city" required
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
+                                placeholder="City" />
+                        </div>
+                        <div class="state-div relative mb-4">
+                            <input type="text" id="state" name="state" required
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
+                                placeholder="State" />
+                        </div>
+                        <div class="country-div relative mb-4">
+                            <input type="text" id="country" name="country" required
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
+                                placeholder="Country" />
+                        </div>
+                        <div class="address-div relative mb-4">
+                            <input type="text" id="address" name="address" required
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
+                                placeholder="Address" />
+                        </div>
+                        <div class="message-div relative mb-4">
+                            <input type="text" id="message" name="message" required
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
+                                placeholder="Message" />
+                        </div>
+                        <div class="counselling-div">
+                            <p class="font-medium mb-4 text-[#808080]">
+                                Request a counselling session
+                            </p>
+                            <div class="space-x-4">
+                                <label class="inline-flex items-center font-medium cursor-pointer">
+                                    <input type="radio" name="counselling" class="w-[22px] h-[22px] accent-[#FF6D2C]"
+                                        checked />
+                                    <span class="ml-2 text-[#808080]">Yes</span>
+                                </label>
+                                <label class="inline-flex items-center font-medium cursor-pointer">
+                                    <input type="radio" name="counselling" class="w-[22px] h-[22px] accent-[#FF6D2C]" />
+                                    <span class="ml-2 text-[#808080]">No</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-medium mb-2 text-[#808080]">
+                                Upload your CV/Resume
+                            </p>
+                            <div class="flex flex-row items-center">
+                                <img src="../images/upload_icon.png" class="h-4 w-4 " alt="">
+                                <input type="file"
+                                    class="w-full p-3 text-[#808080] font-medium border-b-[1.5px] focus:outline-none focus:border-black cursor-pointer border-[#808080]"
+                                    accept="pdf/*" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input type="checkbox"
+                                class="form-checkbox w-7 h-7 peer transition-all duration-300 border-[#FF6D2C] accent-[#FF6D2C]"
+                                required />
+                            <span class="font-medium ml-3 text-[#808080]">Agree terms and conditions</span>
+                        </label>
+                    </div>
+
+                    <button type="submit"
+                        class="w-[100%] sm:w-[400px] bg-[#FF6D2C] font-medium text-[#ffff] py-4.5 mt-12">
+                        Submit Information
+                    </button>
+                </form>
+            </section>
+        </div>
+
+        <!-- third section -->
+        <section id="map" class="mt-10">
+            <div class="max-w-[1190px] mx-auto px-4 py-10">
+                <img src="../images/map.png" alt="map" class="w-full h-full" />
+            </div>
+        </section>
+
+        <!-- fourth section -->
+        <section id="support" class="py-28 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center text-[#0F2137]">
+                <h2 class="md:text-[3.3rem] text-[2.8rem] font-medium text-center mb-4">
+                    Do you have any quesiton
+                </h2>
+                <p class="mb-20 md:text-[1.2rem] text-[0.9rem]">
+                    Our support team ready to help you, please contact with them
+                </p>
+
+                <div class="space-y-6 px-4">
+                    <div>
+                        <details class="group border-b border-(--border-btm-faq) pb-4 mb-4">
+                            <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
+                                <h3
+                                    class="text-lg/[30px] font-medium mb-2 flex items-center text-start group-open:text-(--color-alternate-02)">
+                                    <img src="../images/acc.png" alt="bullet01" class="w-5 h-5 mr-3" />
+                                    How to contact with riders emergency?
+                                </h3>
+                            </summary>
+                            <!-- <p class="ml-4 text-[#343D48] text-start">
+                                Get your blood tests delivered at the home collect a sample
+                                from management news. Get your blood tests delivered at the
+                                home collect a sample from management news. Get your blood
+                                tests delivered at the home collect a sample from management
+                                news. Get your blood tests delivered at the home.
+                            </p> -->
+                        </details>
+                    </div>
+
+                    <div>
+                        <details class="group border-b border-(--border-btm-faq) pb-4 mb-4">
+                            <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
+                                <h3
+                                    class="text-lg/[30px] font-medium mb-2 flex items-center text-start group-open:text-(--color-alternate-02)">
+                                    <img src="../images/acc.png" alt="bullet01" class="w-5 h-5 mr-3" />
+                                    App installation failed, how to update system information?
+                                </h3>
+                            </summary>
+                            <!-- <p class="ml-4 text-[#343D48] text-start">
+                                Get your blood tests delivered at the home collect a sample
+                                from management news. Get your blood tests delivered at the
+                                home collect a sample from management news. Get your blood
+                                tests delivered at the home collect a sample from management
+                                news. Get your blood tests delivered at the home.
+                            </p> -->
+                        </details>
+                    </div>
+
+                    <div>
+                        <details class="group border-b border-(--border-btm-faq) pb-4 mb-4">
+                            <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
+                                <h3
+                                    class="text-lg/[30px] font-medium mb-2 flex items-center text-start group-open:text-(--color-alternate-02)">
+                                    <img src="../images/acc_2.png" alt="bullet01" class="w-5 h-5 mr-3" />
+                                    Website reponse taking time, how to improve?
+                                </h3>
+                            </summary>
+                            <p class="ml-4 text-[#343D48] text-[1rem] text-start">
+                                Get your blood tests delivered at the home collect a sample
+                                from management news. Get your blood tests delivered at the
+                                home collect a sample from management news. Get your blood
+                                tests delivered at the home collect a sample from management
+                                news. Get your blood tests delivered at the home.
+                            </p>
+                        </details>
+                    </div>
+
+                    <div>
+                        <details class="group border-b border-(--border-btm-faq) pb-4 mb-4">
+                            <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
+                                <h3
+                                    class="text-lg/[30px] font-medium mb-2 flex items-center text-start group-open:text-(--color-alternate-02)">
+                                    <img src="../images/acc.png" alt="bullet01" class="w-5 h-5 mr-3" />
+                                    New update fixed all bug and issues
+                                </h3>
+                            </summary>
+                            <!-- <p class="text-start">
+                                Get your blood tests delivered at the home collect a sample
+                                from management news. Get your blood tests delivered at the
+                                home collect a sample from management news. Get your blood
+                                tests delivered at the home collect a sample from management
+                                news. Get your blood tests delivered at the home.
+                            </p> -->
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- fifth section -->
+        <section class="container p-10 mx-auto flex items-center justify-center bg-[#F3FAFA]">
+            <div class="flex flex-col items-center justify-center text-center max-w-7xl mx-auto px-5 sm:px-15">
+                <h2 class="text-[3rem] md:text-[4.5rem] font-semibold text-[#1F1F1F] lg:px-22">
+                    Subscribe to Our Newsletter <br> for Design Insights
+                </h2>
+                <p class="text-lg md:text-2xl font-medium pt-10 text-[#545454] md:px-23 lg:px-44">
+                    Be the first to discover trends, inspirations, and special offers as
+                    we bring the world of design directly to your inbox
+                </p>
+                <div class="pt-20 lg:pt-30 flex items-center justify-center relative w-full max-w-[979px]">
+                    <div class="relative w-full md:h-[104px] h-[95px] text-2xl outline-none shadow-2xl">
+                        <img src="../images/mail_logo.png" alt="envelop"
+                            class="hidden md:block w-[24px] h-[24px] absolute left-12 top-1/2 transform -translate-y-1/2" />
+                        <input type="email" id="email-subscribe" name="email-subscribe"
+                            placeholder="Enter your email address"
+                            class="peer w-full h-full font-medium text-[#8C8C8C] pl-12 sm:pl-22 p-3 bg-white border border-[#EEEEEE] rounded-sm outline-none" />
+                        <button type="submit"
+                            class="hidden lg:block absolute right-2 top-1/2 transform -translate-y-1/2 w-auto sm:px-24 px-20 py-6.5 text-[#fff] font-semibold bg-[#FF6D2C] rounded-sm">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+                <div class="mt-10 lg:hidden">
+                    <button type="submit"
+                        class="right-2 w-auto sm:px-24 px-20 py-6.5 text-white font-semibold bg-[#FF6D2C] rounded-sm">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <footer class="container bg-[#FFFFFF] py-10 px-4 md:px-18 ">
+            <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:px-12 md:py-4">
+                <!-- First Column -->
+                <div>
+                    <img src="../images/foot logo.png"
+                        class="md:h-[2.4rem] h-[2rem] lg:w-[13rem] md:w-[12.9rem] w-[10rem]" alt="">
+                    <p class="text-[#1F1F1F] font-medium md:text-[1rem] text-[0.9rem] mb-4 mt-6">VivaDecor your premier
+                        <br> destination for luxury and <br> modern interior design</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="text-[#313131] font-medium md:text-[1.5rem] text-[1.3rem] hover:text-[#009387] duration-700"><ion-icon
+                                name="logo-facebook"></ion-icon></a>
+                        <a href="#"
+                            class="text-[#313131] font-medium md:text-[1.5rem] text-[1.3rem] hover:text-[#009387] duration-700"><ion-icon
+                                name="logo-twitter"></ion-icon></a>
+                        <a href="#"
+                            class="text-[#313131] font-medium md:text-[1.5rem] text-[1.3rem] hover:text-[#009387] duration-700"><ion-icon
+                                name="logo-instagram"></ion-icon></a>
+                        <a href="#"
+                            class="text-[#313131] font-medium md:text-[1.5rem] text-[1.3rem] hover:text-[#009387] duration-700"><ion-icon
+                                name="logo-linkedin"></ion-icon></a>
+                    </div>
+                </div>
+
+                <!-- Second Column -->
+                <div>
+                    <h3 class="font-semibold text-[#1F1F1F] md:text-[1.2rem] text-[1rem] mb-3">Our Services</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#"
+                                class="text-[#1F1F1F] font-medium md:text-[1rem] text-[0.8rem] underline-animation">Interior
+                                design</a></li>
+                        <li><a href="#"
+                                class="text-[#1F1F1F] font-medium md:text-[1rem] text-[0.8rem] underline-animation">Outdoor
+                                design</a></li>
+                        <li><a href="#"
+                                class="text-[#1F1F1F] font-medium md:text-[1rem] text-[0.8rem] underline-animation">Lightning
+                                design</a></li>
+                        <li><a href="#"
+                                class="text-[#1F1F1F] font-medium md:text-[1rem] text-[0.8rem] underline-animation">Office
+                                design</a></li>
+                    </ul>
+                </div>
+
+                <!-- Third Column -->
+                <div>
+                    <h3 class="font-semibold text-[#1F1F1F] md:text-[1.2rem] text-[1rem] mb-3">Our Services</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#"
+                                class="text-[#1F1F1F] font-medium md:text-[1rem] text-[0.8rem] underline-animation">Reviews</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-[#1F1F1F] font-medium md:text-[1rem] text-[0.8rem] underline-animation">Careers</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-[#1F1F1F] font-medium md:text-[1rem] text-[0.8rem] underline-animation">Pricing</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-[#1F1F1F] font-medium md:text-[1rem] text-[0.8rem] underline-animation">Press
+                                inquires</a></li>
+                    </ul>
+                </div>
+
+                <!-- Fourth Column -->
+                <div>
+                    <h3 class="font-semibold text-[#1F1F1F] md:text-[1.2rem] text-[1rem] mb-3">Our Services</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>
+                            <a href="mailto:"
+                                class="text-[#1F1F1F] font-medium md:text-[1rem] text-[0.9rem] mb-4 underline-animation">info@vivadecor.com</a>
+                        </li>
+                        <li>
+                            <p class="text-[#1F1F1F] font-medium md:text-[1rem] text-[0.9rem] mb-4 ">
+                                Design Avenue Cityville,<br> CA 90210 United States
+                            </p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
