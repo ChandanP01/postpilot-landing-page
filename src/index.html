@@ -30,35 +30,36 @@
   .font-inter {
     font-family: "Inter", serif;
   }
+
   .underline-animation {
-        position: relative;
-        display: inline-block;
-        text-decoration: none;
-    }
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
 
-    .underline-animation::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        left: 0;
-        bottom: -2px;
-        background-color: #009387;
-        transition: width 0.6s ease-in-out;
-    }
+  .underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background-color: #009387;
+    transition: width 0.6s ease-in-out;
+  }
 
-    .underline-animation:hover::after {
-        width: 100%;
-    }
+  .underline-animation:hover::after {
+    width: 100%;
+  }
 </style>
 
 <body class="m-0 p-0 box-border font-inter">
   <div class="container flex flex-col mx-auto font-inter scroll-smooth">
     <!-- navbar -->
-    <nav class="p-5 sticky left-0 top-0 bg-[#fff] font-medium">
+    <nav class="p-6 sticky left-0 top-0 z-50 bg-[#fff] font-medium">
       <div class="container mx-auto flex justify-between gap-10 items-center">
         <!-- Logo -->
-        <div>
+        <div class="md:ml-2">
           <img src="./images/nav logo.png" alt="">
         </div>
 
@@ -69,20 +70,32 @@
               <option value="">
                 <a href="#" class="">Resources</a>
               </option>
+              <option value="">
+                <a href="./contact.html" class="">Contact</a>
+              </option>
+              <option value="">
+                <a href="#" class="">Carrers</a>
+              </option>
             </select>
             <a href="#success" class="underline-animation">Success stories</a>
             <select name="" id="" class="cursor-pointer underline-animation">
               <option value="" class="underline-animation">
                 <a href="#" class="underline-animation">Company</a>
               </option>
+              <option value="" class="underline-animation">
+                <a href="#" class="underline-animation">About</a>
+              </option>
+              <option value="" class="underline-animation">
+                <a href="#" class="underline-animation">Policy</a>
+              </option>
             </select>
             <a href="#" class="underline-animation">Pricing</a>
           </div>
           <div class="flex space-x-4 text-[#2E2F35] md:text-[0.8rem] lg:text-[1rem]">
             <button
-              class="lg:px-4 md:px-2 lg:py-2 text-[#2E2F35] border-1 border-black border-b-4 border-r-4 rounded-xl cursor-pointer">Login</button>
+              class="lg:px-4 md:px-2 lg:py-2 text-[#2E2F35] border-1 border-black border-b-4 border-r-4 rounded-xl cursor-pointer hover:shadow-lg hover:shadow-[#009387] dark:hover:shadow-[#009387] transition duration-300">Login</button>
             <button
-              class="lg:px-4 md:px-2 lg:py-2 bg-[#FF6D2C] text-[#ffff] border-1 border-black border-b-4 border-r-4 rounded-xl cursor-pointer">Create
+              class="lg:px-4 md:px-2 lg:py-2 bg-[#FF6D2C] text-[#ffff] border-1 border-black border-b-4 border-r-4 rounded-xl cursor-pointer hover:shadow-lg hover:shadow-[#FF6D2C] dark:hover:shadow-[#FF6D2C] transition duration-300">Create
               free account</button>
           </div>
         </div>
@@ -109,29 +122,27 @@
           </option>
         </select>
         <a href="#" class=" hover:text-blue-500">Pricing</a>
-        
-        <button
-          class="p-2 text-[#2E2F35] border-1 border-black border-b-4 border-r-4 rounded-xl ">Login</button>
-        <button
-          class="p-2 bg-[#FF6D2C] text-[#ffff] border-1 border-black border-b-4 border-r-4 rounded-xl">Create
+
+        <button class="p-2 text-[#2E2F35] border-1 border-black border-b-4 border-r-4 rounded-xl ">Login</button>
+        <button class="p-2 bg-[#FF6D2C] text-[#ffff] border-1 border-black border-b-4 border-r-4 rounded-xl">Create
           free account</button>
       </div>
     </nav>
 
     <div id="first_section" class="container flex justify-between items-center bg-[#E0F8F2] gap-2">
-      <div id="left" class="p-6 flex flex-col justify-center gap-8 ">
+      <div id="left" class="p-5 flex flex-col justify-center gap-8 ">
         <div
-          class="text-[2.5rem] md:text-[4rem] xl:text-[5rem] leading-[3rem] md:leading-[4rem] xl:leading-[6rem] font-bold p-4">
+          class="text-[2.5rem] md:text-[4rem] xl:text-[5rem] leading-[3rem] md:leading-[4rem] xl:leading-[6rem] font-bold p-3">
           Meet your </br>
           <span class="font-normal text-[#009387] font-span">favorite</span> new
           (old) </br> marketing channel.
         </div>
-        <div class="text-[#58595D] font-medium">
+        <div class="text-[#58595D] font-medium md:ml-3">
           Remarkable results. Easier than email. Postcard marketing </br> reinvented for modern ecommerce.
         </div>
-        <div class="flex flex-wrap gap-3">
+        <div class="md:ml-2 flex flex-wrap gap-3">
           <button
-            class="px-5 py-2 rounded-xl border border-b-4 border-r-4 border-black bg-[#FF6D2C] text-white cursor-pointer">TRY
+            class="px-5 py-2 rounded-xl border border-b-4 border-r-4 border-black bg-[#FF6D2C] cursor-pointer text-[#ffff] hover:shadow-lg hover:shadow-[#FF6D2C] dark:hover:shadow-[#FF6D2C] transition duration-300">TRY
             IT
             RISK FREE</button>
           <div>
@@ -152,14 +163,14 @@
     </div>
 
     <div id="second_section" class="container p-5 flex flex-col justify-center gap-16 md:gap-16 items-center">
-      <div class=" md:mb-2">
-        <p class="p-5 text-center text-[#2E2F35] font-bold text-[2rem] md:text-[4rem] leading-10 md:leading-16">Trusted
+      <div class="md:mt-4 md:mb-2">
+        <p class="p-4 text-center text-[#2E2F35] font-bold text-[2rem] md:text-[4rem] leading-10 md:leading-16">Trusted
           by
-          thousands
+          thousands <br>
           of top DTC <span class="font-normal text-[#009387] font-span">brands.</span></p>
       </div>
-      <div class="p-5 flex md:flex-row flex-col gap-14 justify-center items-center">
-        <div class="container flex flex-col justify-between items-center">
+      <div class=" flex md:flex-row flex-col gap-14 md:gap-24 justify-center items-center md:mb-8">
+        <div class="container flex flex-col justify-between items-center gap-2">
           <img src="./images/1st.png" alt="">
           <img src="./images/1st_n.png" alt="" class="mt-2">
         </div>
@@ -180,8 +191,8 @@
 
     <div id="third_section" class="container px-5 py-5 bg-[#F3FAFA] flex flex-col justify-center gap-16 items-center">
       <div
-        class=" md:p-5 text-center text-[#2E2F35] font-bold text-[1.5rem] md:text-[3rem] lg:text-[4rem] leading-8 md:leading-14">
-        Why use direct mail?
+        class="md:mt-4 md:p-5 text-center text-[#2E2F35] font-bold text-[2rem] md:text-[4rem] leading-10 md:leading-16">
+        Why use direct mail? <br>
         It <span class="font-normal font-span text-[#009387]">works</span> like
         crazy.
 
@@ -193,7 +204,7 @@
             email </br> & digital</p>
         </div>
         <div>
-          <img src="./images/third_sec.png" alt="" class="h-3/2 md:h-auto">
+          <img src="./images/third_sec.png" alt="" class="h-1/4 md:h-auto w-auto">
           <p class="text-[#58595D] text-center font-medium md:text-[1rem] text-[0.8rem]">Your messages get read</p>
         </div>
         <div>
@@ -248,7 +259,7 @@
               <img src="./images/div 3.png" alt="">
             </div>
             <button
-              class="mt-4 px-5 py-2 rounded-xl border border-b-4 border-r-4 border-black bg-[#FF6D2C] text-white cursor-pointer">TRY
+              class="mt-4 px-5 py-2 rounded-xl border border-b-4 border-r-4 border-black bg-[#FF6D2C] text-white cursor-pointer hover:shadow-lg hover:shadow-[#FF6D2C] dark:hover:shadow-[#FF6D2C] transition duration-300">TRY
               IT
               RISK FREE</button>
           </div>
@@ -256,7 +267,7 @@
       </div>
     </div>
 
-    <div id="fifth_section" class="container bg-[#FFFFFF] p-12">
+    <div id="fifth_section" class="container bg-[#FFFFFF] p-11">
       <div
         class="p-3 mt-12 text-center text-[#2E2F35] font-bold text-[2.5rem] md:text-[4rem] leading-10 md:leading-14 lg:leading-16">
         Everything your brand needs to
@@ -448,17 +459,17 @@
 
         <!-- Button -->
 
-        <div>
+        <div class="md:mb-4">
           <button
-            class="mt-12 md:px-8 px-6 md:py-4 py-2 rounded-xl border border-b-4 border-r-4 border-black bg-[#FF6D2C] text-[#FFFFFF] font-semibold cursor-pointer">TRY
+            class="mt-12 md:px-8 px-6 md:py-4 py-2 rounded-xl border border-b-4 border-r-4 border-black bg-[#FF6D2C] text-[#FFFFFF] font-semibold cursor-pointer hover:shadow-lg hover:shadow-[#FF6D2C] dark:hover:shadow-[#FF6D2C] transition duration-300">TRY
             IT
             RISK FREE</button>
         </div>
       </div>
     </div>
 
-<!-- eighth section -->
-    <div id="success" class="container bg-[#EEECFF] p-6">
+    <!-- eighth section -->
+    <div id="success" class="container bg-[#EEECFF] p-5">
       <div class="flex flex-col md:flex-row gap-4 md:gap-14 items-center p-6 mx-auto">
         <div class="w-full md:w-1/2 items-start">
           <img src="./images/eight_img.png" alt="Sample Image" class="w-full h-auto rounded-lg">
@@ -498,7 +509,7 @@
 
           <!-- Button -->
           <a
-            class="mt-2 md:p-4 p-3 w-fit rounded-xl border border-b-4 border-r-4 border-black bg-[#FFFFFF] text-[#2E2F35] font-semibold cursor-pointer">TRY
+            class="mt-2 md:p-4 p-3 w-fit rounded-xl border border-b-4 border-r-4 border-black bg-[#FFFFFF] text-[#2E2F35] font-semibold cursor-pointer hover:shadow-lg hover:shadow-[#009387] dark:hover:shadow-[#009387] transition duration-300">TRY
             IT
             RISK FREE</a>
 
@@ -530,7 +541,7 @@
         <!-- 3rd: Button and Text -->
         <div class="flex flex-col sm:flex-row gap-2 md:gap-4 items-center">
           <button
-            class="mt-2 md:px-6 px-4 md:py-3 py-2 rounded-xl border border-b-4 border-r-4 border-[#2E2F35] bg-[#ffff] text-[#2E2F35] font-semibold cursor-pointer">GET
+            class="mt-2 md:px-6 px-4 md:py-3 py-2 rounded-xl border border-b-4 border-r-4 border-[#2E2F35] bg-[#ffff] text-[#2E2F35] font-semibold cursor-pointer hover:shadow-lg hover:shadow-[#009387] dark:hover:shadow-[#009387] transition duration-300">GET
             STARTED</button>
           <div class="sm:mt-auto">
             <div class="text-[#ffff]">
@@ -556,10 +567,10 @@
       </div>
     </div>
 
-    <div id="tenth_section" class="container bg-[#F3FAFA] mx-auto p-6 flex flex-col gap-6">
+    <div id="tenth_section" class="container bg-[#F3FAFA] mx-auto p-5 flex flex-col gap-6">
 
       <!-- Heading -->
-      <h1 class="text-[2rem] md:text-[4rem] font-bold text-[#2E2F35] text-center mt-4 mb-4">
+      <h1 class="text-[2rem] md:text-[4rem] font-bold text-[#2E2F35] text-center mt-4 mb-4 md:mt-6 md:mb-6">
         Latest trends & <span class="font-normal text-[#009387] font-span">insights</span>
       </h1>
 
@@ -660,9 +671,9 @@
           <!-- Right: Buttons -->
           <div class="flex md:gap-4 gap-2 mt-4 md:mt-0">
             <button
-              class="md:px-4 md:text-sm text-[0.6rem] font-normal px-2 py-2 rounded-xl border border-b-4 border-r-4 border-[#2E2F35] bg-[#FFFFFF] text-[#2E2F35] cursor-pointer">Login</button>
+              class="md:px-4 md:text-sm text-[0.6rem] font-normal px-2 py-2 rounded-xl border border-b-4 border-r-4 border-[#2E2F35] bg-[#FFFFFF] text-[#2E2F35] cursor-pointer hover:shadow-lg hover:shadow-[#009387] dark:hover:shadow-[#009387] transition duration-300">Login</button>
             <button
-              class="md:px-4 md:text-sm text-[0.6rem] font-normal px-2 py-2 rounded-xl border border-b-4 border-r-4 border-black bg-[#FF6D2C] text-[#ffff] cursor-pointer">Ty
+              class="md:px-4 md:text-sm text-[0.6rem] font-normal px-2 py-2 rounded-xl border border-b-4 border-r-4 border-black bg-[#FF6D2C] text-[#ffff] cursor-pointer hover:shadow-lg hover:shadow-[#FF6D2C] dark:hover:shadow-[#FF6D2C] transition duration-300">Ty
               it for free</button>
           </div>
 

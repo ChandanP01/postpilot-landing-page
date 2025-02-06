@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        };
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+    <title>Responsive Accordion with Dark Mode</title>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 dark:text-white p-6">
+    <div class="max-w-2xl mx-auto">
+        <button onclick="toggleDarkMode()" class="mb-4 px-4 py-2 bg-gray-300 dark:bg-gray-700 rounded-lg hover:shadow-lg hover:shadow-gray-500 dark:hover:shadow-gray-300 transition duration-300">
+            Toggle Dark Mode
+        </button>
+        <div class="space-y-4">
+            <!-- Accordion Item 1 -->
+            <div class="border border-gray-300 dark:border-gray-700 rounded-lg">
+                <button class="w-full text-left p-4 bg-white dark:bg-gray-800 flex justify-between items-center hover:shadow-lg hover:shadow-blue-500/50 dark:hover:shadow-blue-300/50 transition duration-300" onclick="toggleAccordion(1)">
+                    <span class="font-semibold">What is Tailwind CSS?</span>
+                    <span id="icon-1">+</span>
+                </button>
+                <div id="content-1" class="hidden p-4 bg-gray-50 dark:bg-gray-700">
+                    Tailwind CSS is a utility-first CSS framework for rapid UI development.
+                </div>
+            </div>
+            
+            <!-- Accordion Item 2 -->
+            <div class="border border-gray-300 dark:border-gray-700 rounded-lg">
+                <button class="w-full text-left p-4 bg-white dark:bg-gray-800 flex justify-between items-center hover:shadow-lg hover:shadow-green-500/50 dark:hover:shadow-green-300/50 transition duration-300" onclick="toggleAccordion(2)">
+                    <span class="font-semibold">How does Tailwind differ from Bootstrap?</span>
+                    <span id="icon-2">+</span>
+                </button>
+                <div id="content-2" class="hidden p-4 bg-gray-50 dark:bg-gray-700">
+                    Unlike Bootstrap, Tailwind is a utility-based framework without predefined components.
+                </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div class="border border-gray-300 dark:border-gray-700 rounded-lg">
+                <button class="w-full text-left p-4 bg-white dark:bg-gray-800 flex justify-between items-center hover:shadow-lg hover:shadow-purple-500/50 dark:hover:shadow-purple-300/50 transition duration-300" onclick="toggleAccordion(3)">
+                    <span class="font-semibold">Is Tailwind CSS mobile-friendly?</span>
+                    <span id="icon-3">+</span>
+                </button>
+                <div id="content-3" class="hidden p-4 bg-gray-50 dark:bg-gray-700">
+                    Yes, Tailwind CSS has built-in responsive utilities for designing mobile-friendly layouts.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(`content-${id}`);
+            const icon = document.getElementById(`icon-${id}`);
+            
+            if (content.classList.contains("hidden")) {
+                content.classList.remove("hidden");
+                icon.textContent = "-";
+            } else {
+                content.classList.add("hidden");
+                icon.textContent = "+";
+            }
+        }
+    </script>
+</body>
+</html>
