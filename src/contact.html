@@ -56,17 +56,17 @@
 <body class="m-0 p-0 box-border font-inter">
     <div class="container flex flex-col mx-auto font-inter scroll-smooth">
         <!-- Navbar -->
-        <nav class="w-full p-6 md:mr-12 sticky left-0 top-0 z-50 bg-[#fff] font-medium">
-            <div class="container mx-auto flex justify-between gap-10 items-center">
+        <nav class="w-full p-6 sticky left-0 top-0 z-50 bg-[#fff] font-medium">
+            <div class="container md:mr-10 md:ml-10 mx-auto flex justify-between gap-32  items-center">
                 <!-- Logo -->
                 <div class="lg:ml-16 md:ml-18">
                     <img src="./images/nav logo.png" alt="">
                 </div>
 
                 <!-- Menu -->
-                <div class="md:mr-12 hidden md:flex space-x-10  items-center text-[#222222]">
+                <div class="md:mr-16 hidden md:flex space-x-10  items-center text-[#222222]">
                     <div class="flex space-x-4 lg:text-[0.9rem] text-[0.7rem]">
-                        <select name="" id="" class="cursor-pointer hover:text-blue-500">
+                        <select name="" id="" class="cursor-pointer underline-animation">
                             <option value="">
                                 <a href="#" class="">Resources</a>
                             </option>
@@ -77,8 +77,8 @@
                                 <a href="#" class="">Carrers</a>
                             </option>
                         </select>
-                        <a href="#" class=" hover:text-blue-500">Success stories</a>
-                        <select name="" id="" class="cursor-pointer hover:text-blue-500">
+                        <a href="#" class="underline-animation">Success stories</a>
+                        <select name="" id="" class="cursor-pointer underline-animation">
                             <option value="" class="underline-animation">
                                 <a href="#" class="underline-animation">Company</a>
                             </option>
@@ -89,7 +89,7 @@
                                 <a href="#" class="underline-animation">Policy</a>
                             </option>
                         </select>
-                        <a href="#" class=" hover:text-blue-500">Pricing</a>
+                        <a href="#" class="underline-animation">Pricing</a>
                     </div>
                     <div class="flex space-x-4 text-[#2E2F35] md:text-[0.8rem] lg:text-[1rem]">
                         <button
@@ -195,57 +195,67 @@
                     </p>
                 </div>
 
-                <form class="bg-[#FDF3EA] px-4 sm:px-24 py-20 rounded-[30px] shadow-sm">
+                <form novalidate id="contact-form" class="bg-[#FDF3EA] px-4 sm:px-24 py-20 rounded-[30px] shadow-sm">
                     <div class="grid grid-cols-2 gap-x-6 gap-y-14">
                         <div class="name-div relative mb-4">
+                            <label for="name" class="text-[#808080]">Full name</label>
                             <input type="text" id="name" name="name" required
-                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
-                                placeholder="Full name" />
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080] text-[#2E2F35]" />
+                            <div class="text-[#FF0000]" id="name-error"></div>
                         </div>
                         <div class="email-div relative mb-4">
+                            <label for="email" class="text-[#808080]">Email address</label>
                             <input type="email" id="email" name="email" required
-                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
-                                placeholder="Email address" />
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080] text-[#2E2F35]" />
+                            <div class="text-[#FF0000]" id="email-error"></div>
                         </div>
                         <div class="phone-div relative mb-4">
-                            <input type="tel" id="tel" name="tel" required
-                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
-                                placeholder="Phone number" />
+                            <label for="phone" class="text-[#808080]">Phone number</label>
+                            <input type="tel" id="phone" name="phone" required
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080] text-[#2E2F35]" />
+                            <div class="text-[#FF0000]" id="phone-error"></div>
                         </div>
                         <div class="date-div relative mb-4">
+                            <label for="date" class="text-[#808080]">Date of birth</label>
                             <input type="date" id="date" name="date" required
-                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
-                                placeholder="Date of birth" />
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080] text-[#808080]" />
+                            <div class="text-[#FF0000]" id="date-error"></div>
                         </div>
                         <div class="city-div relative mb-4">
+                            <label for="gender" class="text-[#808080]">Gender</label>
                             <input type="text" id="gender" name="gender" required
-                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
-                                placeholder="Gender" />
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080] text-[#2E2F35]" />
+                            <div class="text-[#FF0000]" id="gender-error"></div>
                         </div>
                         <div class="city-div relative mb-4">
+                            <label for="city" class="text-[#808080]">City</label>
                             <input type="text" id="city" name="city" required
-                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
-                                placeholder="City" />
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080] text-[#2E2F35]" />
+                            <div class="text-[#FF0000]" id="city-error"></div>
                         </div>
                         <div class="state-div relative mb-4">
+                            <label for="state" class="text-[#808080]">State</label>
                             <input type="text" id="state" name="state" required
-                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
-                                placeholder="State" />
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080] text-[#2E2F35]" />
+                            <div class="text-[#FF0000]" id="state-error"></div>
                         </div>
                         <div class="country-div relative mb-4">
+                            <label for="country" class="text-[#808080]">Country</label>
                             <input type="text" id="country" name="country" required
-                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
-                                placeholder="Country" />
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080] text-[#2E2F35]" />
+                            <div class="text-[#FF0000]" id="country-error"></div>
                         </div>
                         <div class="address-div relative mb-4">
+                            <label for="address" class="text-[#808080]">Address</label>
                             <input type="text" id="address" name="address" required
-                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
-                                placeholder="Address" />
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080] text-[#2E2F35]" />
+                            <div class="text-[#FF0000]" id="address-error"></div>
                         </div>
                         <div class="message-div relative mb-4">
+                            <label for="message" class="text-[#808080]">Message</label>
                             <input type="text" id="message" name="message" required
-                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080]"
-                                placeholder="Message" />
+                                class="w-full p-3 font-medium border-b-[1px] outline-none border-[#808080] text-[#2E2F35]" />
+                            <div class="text-[#FF0000]" id="message-error"></div>
                         </div>
                         <div class="counselling-div">
                             <p class="font-medium mb-4 text-[#808080]">
@@ -261,6 +271,7 @@
                                     <input type="radio" name="counselling" class="w-[22px] h-[22px] accent-[#FF6D2C]" />
                                     <span class="ml-2 text-[#808080]">No</span>
                                 </label>
+                                <div id="counselling-error"></div>
                             </div>
                         </div>
                         <div>
@@ -278,24 +289,26 @@
 
                     <div class="mt-8">
                         <label class="inline-flex items-center cursor-pointer">
-                            <input type="checkbox"
+                            <input id="check" type="checkbox"
                                 class="form-checkbox w-7 h-7 peer transition-all duration-300 border-[#FF6D2C] accent-[#FF6D2C]"
                                 required />
                             <span class="font-medium ml-3 text-[#808080]">Agree terms and conditions</span>
                         </label>
+                        <div class="text-[#FF0000]" id="Terms-condition"></div>
                     </div>
 
                     <button type="submit"
-                        class="w-[100%] sm:w-[400px] bg-[#FF6D2C] font-medium text-[#ffff] py-4.5 mt-12">
+                        class="w-[100%] sm:w-[400px] bg-[#FF6D2C] font-medium text-[#ffff] py-4.5 mt-12 cursor-pointer hover:shadow-lg hover:shadow-[#ffa5a5de] duration-500">
                         Submit Information
                     </button>
+                    <div class="text-[#FF0000] w-[100%] sm:w-[400px] flex items-center justify-center" id="submit-error"></div>
                 </form>
             </section>
         </div>
 
         <!-- third section -->
         <section id="map" class="mt-10">
-            <div class="max-w-[1190px] mx-auto px-4 py-10">
+            <div class="max-w-[1290px] mx-auto px-4 py-10">
                 <img src="./images/map.png" alt="map" class="w-full h-full" />
             </div>
         </section>
@@ -313,48 +326,48 @@
                 <div class="space-y-6 px-4">
                     <div>
                         <details class="group border-b border-(--border-btm-faq) pb-4 mb-4">
-                            <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
-                                <h3
-                                    class="text-lg/[30px] font-medium mb-2 flex items-center text-start group-open:text-(--color-alternate-02)">
-                                    <img src="./images/acc.png" alt="bullet01" class="w-5 h-5 mr-3" />
+                            <summary class="flex items-center justify-between cursor-pointer text-lg font-medium ">
+                                <h3 onclick="imageToggle(this)"
+                                    class="text-lg/[30px] font-medium mb-2 flex items-center text-start group-open:text-(--color-alternate-02) sum">
+                                    <img src="./images/acc.png" alt="bullet01" class="acc w-5 h-5 mr-3" />
                                     How to contact with riders emergency?
                                 </h3>
                             </summary>
-                            <!-- <p class="ml-4 text-[#343D48] text-start">
+                            <p class="ml-4 text-[#343D48] text-[1rem] text-start">
                                 Get your blood tests delivered at the home collect a sample
                                 from management news. Get your blood tests delivered at the
                                 home collect a sample from management news. Get your blood
                                 tests delivered at the home collect a sample from management
                                 news. Get your blood tests delivered at the home.
-                            </p> -->
+                            </p>
                         </details>
                     </div>
 
                     <div>
                         <details class="group border-b border-(--border-btm-faq) pb-4 mb-4">
-                            <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
-                                <h3
-                                    class="text-lg/[30px] font-medium mb-2 flex items-center text-start group-open:text-(--color-alternate-02)">
-                                    <img src="./images/acc.png" alt="bullet01" class="w-5 h-5 mr-3" />
+                            <summary class="flex items-center justify-between cursor-pointer text-lg font-medium " >
+                                <h3 onclick="imageToggle(this)"
+                                    class="text-lg/[30px] font-medium mb-2 flex items-center text-start group-open:text-(--color-alternate-02) sum">
+                                    <img src="./images/acc.png" alt="bullet01" class="acc w-5 h-5 mr-3" />
                                     App installation failed, how to update system information?
                                 </h3>
                             </summary>
-                            <!-- <p class="ml-4 text-[#343D48] text-start">
+                            <p class="ml-4 text-[#343D48] text-[1rem] text-start">
                                 Get your blood tests delivered at the home collect a sample
                                 from management news. Get your blood tests delivered at the
                                 home collect a sample from management news. Get your blood
                                 tests delivered at the home collect a sample from management
                                 news. Get your blood tests delivered at the home.
-                            </p> -->
+                            </p>
                         </details>
                     </div>
 
                     <div>
                         <details class="group border-b border-(--border-btm-faq) pb-4 mb-4">
-                            <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
-                                <h3
-                                    class="text-lg/[30px] font-medium mb-2 flex items-center text-start group-open:text-(--color-alternate-02)">
-                                    <img src="./images/acc_2.png" alt="bullet01" class="w-5 h-5 mr-3" />
+                            <summary class="flex items-center justify-between cursor-pointer text-lg font-medium ">
+                                <h3 onclick="imageToggle(this)"
+                                    class="text-lg/[30px] font-medium mb-2 flex items-center text-start group-open:text-(--color-alternate-02) sum">
+                                    <img src="./images/acc.png" alt="bullet01" class="acc w-5 h-5 mr-3" />
                                     Website reponse taking time, how to improve?
                                 </h3>
                             </summary>
@@ -370,20 +383,20 @@
 
                     <div>
                         <details class="group border-b border-(--border-btm-faq) pb-4 mb-4">
-                            <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
-                                <h3
-                                    class="text-lg/[30px] font-medium mb-2 flex items-center text-start group-open:text-(--color-alternate-02)">
-                                    <img src="./images/acc.png" alt="bullet01" class="w-5 h-5 mr-3" />
+                            <summary class="flex items-center justify-between cursor-pointer text-lg font-medium ">
+                                <h3 onclick="imageToggle(this)"
+                                    class="text-lg/[30px] font-medium mb-2 flex items-center text-start group-open:text-(--color-alternate-02) sum">
+                                    <img src="./images/acc.png" alt="bullet01" class="acc w-5 h-5 mr-3" />
                                     New update fixed all bug and issues
                                 </h3>
                             </summary>
-                            <!-- <p class="text-start">
+                            <p class="ml-4 text-[#343D48] text-[1rem] text-start">
                                 Get your blood tests delivered at the home collect a sample
                                 from management news. Get your blood tests delivered at the
                                 home collect a sample from management news. Get your blood
                                 tests delivered at the home collect a sample from management
                                 news. Get your blood tests delivered at the home.
-                            </p> -->
+                            </p>
                         </details>
                     </div>
                 </div>
@@ -408,14 +421,14 @@
                             placeholder="Enter your email address"
                             class="peer w-full h-full font-medium text-[#8C8C8C] pl-12 sm:pl-22 p-3 bg-white border border-[#EEEEEE] rounded-sm outline-none" />
                         <button type="submit"
-                            class="hidden lg:block absolute right-2 top-1/2 transform -translate-y-1/2 w-auto sm:px-24 px-20 py-6.5 text-[#fff] font-semibold bg-[#FF6D2C] rounded-sm">
+                            class="hidden lg:block absolute right-2 top-1/2 transform -translate-y-1/2 w-auto sm:px-24 px-20 py-6.5 text-[#fff] font-semibold bg-[#FF6D2C] rounded-sm cursor-pointer hover:shadow-lg hover:shadow-[#ffa5a5de] duration-500">
                             Subscribe
                         </button>
                     </div>
                 </div>
                 <div class="mt-10 lg:hidden">
                     <button type="submit"
-                        class="right-2 w-auto sm:px-24 px-20 py-6.5 text-white font-semibold bg-[#FF6D2C] rounded-sm">
+                        class="right-2 w-auto sm:px-24 px-20 py-6.5 text-white font-semibold bg-[#FF6D2C] rounded-sm cursor-pointer hover:shadow-lg hover:shadow-[#ffa5a5de] duration-500">
                         Subscribe
                     </button>
                 </div>
@@ -507,14 +520,7 @@
     </div>
 
 
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
